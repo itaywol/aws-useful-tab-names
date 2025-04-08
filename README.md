@@ -6,13 +6,17 @@ A Chrome extension that automatically renames AWS Console tabs to include accoun
 
 When working with multiple AWS accounts and regions simultaneously, browser tabs become difficult to distinguish as they all show similar or identical titles.
 
+![Problem with AWS console tabs](assets/problem.png)
+
 ## Solution
 
 This extension transforms generic AWS Console tab titles into a concise format: `ACCOUNTID|REGION|SERVICE` where:
 
-- **ACCOUNTID**: Last 4 digits of the AWS account number
+- **ACCOUNTID**: first 4 digits of the AWS account number
 - **REGION**: Shortened region name (e.g., "us-east-1" → "us-e1")
 - **SERVICE**: The AWS service being accessed
+
+![Solution with renamed tabs](assets/solution.png)
 
 ## Features
 

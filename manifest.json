@@ -1,16 +1,18 @@
 {
   "manifest_version": 3,
-  "name": "AWS Useful tab names",
+  "name": "AWS Console Title Changer",
   "version": "1.0",
-  "description": "Renames AWS Console tabs to include account ID, region, and service",
-  "permissions": ["tabs"],
+  "description": "Changes AWS Console tab titles to a more readable format",
+  "permissions": ["tabs", "scripting"],
   "host_permissions": ["*://*.console.aws.amazon.com/*"],
   "background": {
     "service_worker": "background.js"
   },
-  "icons": {
-    "16": "images/icon16.png",
-    "48": "images/icon48.png",
-    "128": "images/icon128.png"
-  }
+  "content_scripts": [
+    {
+      "matches": ["*://*.console.aws.amazon.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
 }
